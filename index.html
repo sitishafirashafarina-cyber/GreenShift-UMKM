@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenShift UMKM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<section id="splashScreen" class="intro-screen">
+  <div class="intro-tag">🌿 SAHABAT USAHA KULINER</div>
+  <div class="intro-logo">🌱</div>
+  <h1>GreenShift UMKM</h1>
+  <p>Mulai perjalanan usaha kuliner yang lebih hemat, ramah lingkungan, dan berkelanjutan.</p>
+  <button class="intro-button" onclick="showOnboarding()">Mulai Sekarang →</button>
+</section>
+
+<!-- ONBOARDING -->
+<section id="onboardingScreen" class="intro-screen" hidden>
+  <div class="intro-tag">🌱 KENALI GREENSHIFT UMKM</div>
+  <h1>Warung hemat, bumi sehat.</h1>
+  <p>Kelola usaha kulinermu dengan lebih mudah sekaligus membantu menjaga lingkungan.</p>
+
+  <div class="intro-features">
+    <div class="intro-feature">
+      <span>🧾</span>
+      <h3>Kelola Warung</h3>
+      <p>Catat transaksi dan pantau stok bahan dengan mudah.</p>
+    </div>
+    <div class="intro-feature">
+      <span>💚</span>
+      <h3>Selamatkan Bahan</h3>
+      <p>Kurangi bahan terbuang dan manfaatkan stok dengan baik.</p>
+    </div>
+    <div class="intro-feature">
+      <span>☀️</span>
+      <h3>Hemat Energi</h3>
+      <p>Kenali peluang penghematan energi untuk usaha.</p>
+    </div>
+  </div>
+
+  <button class="intro-button" onclick="enterApp()">Masuk ke Dashboard →</button>
+</section>
+
+<!-- APLIKASI UTAMA -->
+<div class="app" id="mainApp" hidden>
+
+  <aside class="sidebar">
+    <h2>🌱 GreenShift</h2>
+    <p>UMKM · Sahabat Usaha Kuliner</p>
+    <nav>
+      <button onclick="showPage('home')">⌂ Beranda</button>
+      <button onclick="showPage('cashier')">▣ Kasir & Stok</button>
+      <button onclick="showPage('save')">♡ Selamatkan Bahan</button>
+      <button onclick="showPage('energy')">☀ Energi Surya</button>
+      <button onclick="showPage('bulk')">♧ Kulakan Hijau</button>
+    </nav>
+  </aside>
+
+  <main>
+
+    <!-- BERANDA -->
+    <section id="home" class="page active">
+      <div class="dashboard-header">
+        <div>
+          <span class="welcome-label">DASHBOARD WARUNG</span>
+          <h1>Halo, Bu Sari! 👋</h1>
+          <p>Warung hemat, bumi lebih sehat.</p>
+        </div>
+        <div class="profile-icon">👩🏻‍🍳</div>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-info">
+          <span class="impact-label">🌿 SKOR DAMPAK HIJAU</span>
+          <h2>84<span>/100</span></h2>
+          <p>Hebat! Warung Anda semakin ramah lingkungan.</p>
+          <div class="impact-status">↗ Performa sangat baik</div>
+        </div>
+
+        <div class="impact-chart">
+          <svg viewBox="0 0 300 125" width="100%" height="125" role="img" aria-label="Grafik perkembangan skor hijau">
+            <defs>
+              <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity=".45"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M5 95 L45 78 L85 84 L125 55 L165 65 L205 35 L245 42 L290 12 L290 120 L5 120 Z" fill="url(#chartFill)"/>
+            <path d="M5 95 L45 78 L85 84 L125 55 L165 65 L205 35 L245 42 L290 12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="290" cy="12" r="5" fill="#fff"/>
+          </svg>
+          <div class="chart-days">
+            <span>Sen</span><span>Sel</span><span>Rab</span>
+            <span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <h2>Ringkasan Warung</h2>
+          <p>Performa usaha hari ini</p>
+        </div>
+        <span class="today-label">Hari ini</span>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-icon">💰</div>
+          <p>Total Hemat Hari Ini</p>
+          <h2>Rp35.000</h2>
+          <span class="summary-note">↑ Penghematan warung</span>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon">⚡</div>
+          <p>Efisiensi Warung</p>
+          <h2>8/10</h2>
+          <div class="efficiency-bar"><div></div></div>
+          <span class="summary-note">Efisiensi sangat baik</span>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon">🥬</div>
+          <p>Bahan Terselamatkan</p>
+          <h2>2 Bahan</h2>
+          <span class="summary-note">Mengurangi bahan terbuang</span>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <h2>Akses Cepat</h2>
+          <p>Kelola kebutuhan warung Anda</p>
+        </div>
+      </div>
+
+      <div class="quick-grid">
+        <div class="quick-card" onclick="showPage('cashier')">
+          <div class="quick-icon cashier-icon">🧾</div>
+          <h3>Kasir & Stok</h3>
+          <p>Catat pesanan dan pantau stok.</p>
+          <span>Kelola sekarang →</span>
+        </div>
+        <div class="quick-card" onclick="showPage('save')">
+          <div class="quick-icon save-icon">🌱</div>
+          <h3>Selamatkan Bahan</h3>
+          <p>Kurangi bahan makanan terbuang.</p>
+          <span>Lihat bahan →</span>
+        </div>
+        <div class="quick-card" onclick="showPage('energy')">
+          <div class="quick-icon energy-icon">☀️</div>
+          <h3>Energi Surya</h3>
+          <p>Simulasikan penghematan listrik.</p>
+          <span>Cek simulasi →</span>
+        </div>
+        <div class="quick-card" onclick="showPage('bulk')">
+          <div class="quick-icon bulk-icon">🛍️</div>
+          <h3>Kulakan Hijau</h3>
+          <p>Belanja bahan bersama komunitas.</p>
+          <span>Gabung sekarang →</span>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <h2>Aktivitas Warung</h2>
+          <p>Informasi dan pengingat untuk Anda</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🌿</div>
+        <div>
+          <h3>Selamat! Skor hijau Anda 84</h3>
+          <p>Warung Anda telah menunjukkan kebiasaan usaha yang lebih ramah lingkungan.</p>
+          <span>Hari ini</span>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🥬</div>
+        <div>
+          <h3>Perhatikan stok bahan</h3>
+          <p>Pastikan bahan makanan digunakan sebelum kualitasnya menurun.</p>
+          <span>Pengingat stok</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- KASIR -->
+    <section id="cashier" class="page">
+  <div class="cashier-header">
+    <div>
+      <span class="welcome-label">MANAJEMEN WARUNG</span>
+      <h1>Kasir & Stok 🧾</h1>
+      <p>Kelola pesanan dan pantau persediaan bahan.</p>
+    </div>
+    <div class="profile-icon">🛒</div>
+  </div>
+
+  <div class="cashier-stats">
+    <div class="cashier-stat">
+      <span>📋</span>
+      <p>Menu tersedia</p>
+      <h2>4 Menu</h2>
+    </div>
+    <div class="cashier-stat">
+      <span>📦</span>
+      <p>Stok bahan</p>
+      <h2>3 Bahan</h2>
+    </div>
+  </div>
+
+  <div class="cashier-layout">
+    <div>
+      <div class="section-heading">
+        <div>
+          <h2>Daftar Menu</h2>
+          <p>Pilih menu untuk menambahkan pesanan.</p>
+        </div>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-emoji">🍛</div>
+          <h3>Nasi Ayam</h3>
+          <p>Menu makanan</p>
+          <strong>Rp20.000</strong>
+          <button onclick="addOrder('Nasi Ayam',20000)">+ Tambah</button>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-emoji">🍳</div>
+          <h3>Nasi Goreng</h3>
+          <p>Menu makanan</p>
+          <strong>Rp18.000</strong>
+          <button onclick="addOrder('Nasi Goreng',18000)">+ Tambah</button>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-emoji">🍢</div>
+          <h3>Tempe Goreng</h3>
+          <p>Menu makanan</p>
+          <strong>Rp8.000</strong>
+          <button onclick="addOrder('Tempe Goreng',8000)">+ Tambah</button>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-emoji">🧋</div>
+          <h3>Es Teh Manis</h3>
+          <p>Menu minuman</p>
+          <strong>Rp5.000</strong>
+          <button onclick="addOrder('Es Teh Manis',5000)">+ Tambah</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-panel">
+      <h2>🛍️ Ringkasan Pesanan</h2>
+      <p>Pesanan pelanggan</p>
+      <div id="orderList" class="order-list">
+        Belum ada pesanan.
+      </div>
+      <div class="order-total">
+        <span>Total pembayaran</span>
+        <strong id="total">Rp0</strong>
+      </div>
+      <button class="checkout-button" onclick="checkout()">
+        Konfirmasi Pesanan →
+      </button>
+    </div>
+  </div>
+
+  <div class="section-heading">
+    <div>
+      <h2>Persediaan Bahan</h2>
+      <p>Pantau ketersediaan bahan warung.</p>
+    </div>
+  </div>
+
+  <div class="stock-grid">
+    <div class="stock-card">
+      <div class="stock-top">
+        <span>🍚 Beras</span>
+        <strong>8 kg / 10 kg</strong>
+      </div>
+      <div class="stock-bar"><div style="width:80%"></div></div>
+      <small>Stok tersedia</small>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-top">
+        <span>🍗 Ayam</span>
+        <strong>2,5 kg / 5 kg</strong>
+      </div>
+      <div class="stock-bar"><div style="width:50%"></div></div>
+      <small>Stok perlu diperhatikan</small>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-top">
+        <span>🛢️ Minyak</span>
+        <strong>1 L / 5 L</strong>
+      </div>
+      <div class="stock-bar low"><div style="width:20%"></div></div>
+      <small>Stok mulai menipis</small>
+    </div>
+  </div>
+</section>
+
+    <!-- SELAMATKAN BAHAN -->
+    <section id="save" class="page">
+
+  <div class="dashboard-header">
+    <div>
+      <span class="welcome-label">GERAKAN ANTI-FOOD WASTE</span>
+      <h1>Selamatkan Bahan 🌱</h1>
+      <p>Kurangi bahan terbuang, hemat biaya operasional warung.</p>
+    </div>
+    <div class="profile-icon">🥬</div>
+  </div>
+
+  <div class="save-hero">
+    <div>
+      <span>💚 MISI WARUNG HIJAU</span>
+      <h2>Setiap bahan punya nilai!</h2>
+      <p>Gunakan bahan makanan dengan bijak dan bantu mengurangi limbah makanan.</p>
+    </div>
+    <div class="save-hero-icon">🌿</div>
+  </div>
+
+  <div class="section-heading">
+    <div>
+      <h2>Ringkasan Bahan</h2>
+      <p>Catatan penyelamatan bahan warung.</p>
+    </div>
+  </div>
+
+  <div class="save-stats">
+    <div class="save-stat">
+      <span>🥗</span>
+      <h2>2</h2>
+      <p>Bahan terselamatkan</p>
+    </div>
+    <div class="save-stat">
+      <span>♻️</span>
+      <h2>1,5 kg</h2>
+      <p>Estimasi bahan digunakan</p>
+    </div>
+    <div class="save-stat">
+      <span>💰</span>
+      <h2>Rp15.000</h2>
+      <p>Estimasi nilai bahan</p>
+    </div>
+  </div>
+
+  <div class="section-heading">
+    <div>
+      <h2>Daftar Bahan Tersedia</h2>
+      <p>Pilih bahan yang sudah digunakan hari ini.</p>
+    </div>
+  </div>
+
+  <div class="ingredient-list">
+
+    <label class="ingredient-card">
+      <input type="checkbox" value="Tomat">
+      <div class="ingredient-emoji">🍅</div>
+      <div class="ingredient-info">
+        <h3>Tomat</h3>
+        <p>Sayuran segar · 0,5 kg</p>
+        <span class="ingredient-status">Perlu digunakan</span>
+      </div>
+      <span class="ingredient-check">✓</span>
+    </label>
+
+    <label class="ingredient-card">
+      <input type="checkbox" value="Bayam">
+      <div class="ingredient-emoji">🥬</div>
+      <div class="ingredient-info">
+        <h3>Bayam</h3>
+        <p>Sayuran hijau · 1 ikat</p>
+        <span class="ingredient-status">Perlu digunakan</span>
+      </div>
+      <span class="ingredient-check">✓</span>
+    </label>
+
+    <label class="ingredient-card">
+      <input type="checkbox" value="Wortel">
+      <div class="ingredient-emoji">🥕</div>
+      <div class="ingredient-info">
+        <h3>Wortel</h3>
+        <p>Sayuran segar · 0,5 kg</p>
+        <span class="ingredient-status">Perlu digunakan</span>
+      </div>
+      <span class="ingredient-check">✓</span>
+    </label>
+
+  </div>
+
+  <div class="save-action">
+    <div>
+      <h3>Sudah menggunakan bahan?</h3>
+      <p>Pilih bahan di atas, lalu simpan catatan penggunaan.</p>
+    </div>
+    <button onclick="saveIngredients()">✓ Simpan Catatan</button>
+  </div>
+
+  <div class="save-history">
+    <h2>📋 Riwayat Aktivitas</h2>
+    <p id="savedHistory">Belum ada bahan yang dicatat hari ini.</p>
+  </div>
+
+</section>
+
+    <!-- ENERGI -->
+    <section id="energy" class="page">
+  <div class="dashboard-header">
+    <div>
+      <p class="eyebrow">GREEN ENERGY</p>
+      <h1>Simulasi Energi Terbarukan</h1>
+      <p>Hitung potensi penghematan energi untuk usahamu.</p>
+    </div>
+    <span class="header-icon">☀️</span>
+  </div>
+
+  <div class="energy-hero">
+    <div class="energy-hero-text">
+      <span class="energy-tag">ENERGI LEBIH HIJAU</span>
+      <h2>Mulai Hemat Energi,<br />Mulai dari Sekarang!</h2>
+      <p>
+        Gunakan energi terbarukan untuk membantu mengurangi
+        biaya listrik dan dampak lingkungan.
+      </p>
+    </div>
+    <div class="energy-sun">☀️</div>
+  </div>
+
+  <div class="energy-info-grid">
+    <div class="energy-info-card">
+      <span>🌿</span>
+      <div>
+        <h3>Ramah Lingkungan</h3>
+        <p>Mendukung penggunaan energi bersih.</p>
+      </div>
+    </div>
+
+    <div class="energy-info-card">
+      <span>💰</span>
+      <div>
+        <h3>Lebih Hemat</h3>
+        <p>Membantu memperkirakan penghematan listrik.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="energy-calculator">
+    <div class="calculator-heading">
+      <span>⚡</span>
+      <div>
+        <h2>Kalkulator Energi</h2>
+        <p>Masukkan informasi penggunaan listrik usahamu.</p>
+      </div>
+    </div>
+
+    <div class="energy-form">
+      <div class="form-group">
+        <label for="bill">Tagihan listrik per bulan (Rp)</label>
+        <input
+          type="number"
+          id="bill"
+          placeholder="Contoh: 500000"
+          min="1"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="solar">Target penggunaan energi surya</label>
+        <select id="solar">
+          <option value="10">10% - Pemula</option>
+          <option value="20">20% - Menengah</option>
+          <option value="30">30% - Optimal</option>
+          <option value="50">50% - Maksimal</option>
+        </select>
+      </div>
+
+      <button class="energy-button" onclick="calculateEnergy()">
+        Hitung Penghematan →
+      </button>
+    </div>
+
+    <div class="energy-result">
+      <h3>Hasil Simulasi</h3>
+      <p class="result-description">
+        Berikut perkiraan penghematan berdasarkan data yang kamu masukkan.
+      </p>
+
+      <div class="result-grid">
+        <div class="result-card saving-card">
+          <span>💚</span>
+          <p>Estimasi Penghematan</p>
+          <h2 id="saving">Rp0</h2>
+        </div>
+
+        <div class="result-card">
+          <span>⚡</span>
+          <p>Estimasi Tagihan Baru</p>
+          <h2 id="newBill">Rp0</h2>
+        </div>
+      </div>
+
+      <p class="energy-note">
+        *Hasil ini merupakan simulasi sederhana, bukan penawaran atau
+        perhitungan teknis pemasangan panel surya.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- KULAKAN -->
+   <section id="bulk" class="page">
+  <div class="dashboard-header">
+    <div>
+      <p class="eyebrow">GREEN SHOPPING</p>
+      <h1>Kulakan Hijau</h1>
+      <p>Belanja bersama, lebih hemat, lebih ramah lingkungan.</p>
+    </div>
+    <span class="header-icon">🛒</span>
+  </div>
+
+  <div class="bulk-hero">
+    <div>
+      <span class="bulk-tag">BELANJA BERSAMA UMKM</span>
+      <h2>Kulakan Bareng,<br />Harga Lebih Hemat!</h2>
+      <p>
+        Gabungkan kebutuhan bahan baku dengan UMKM lain
+        untuk mendapatkan harga pembelian yang lebih terjangkau.
+      </p>
+    </div>
+    <div class="bulk-hero-icon">🌿</div>
+  </div>
+
+  <div class="bulk-summary">
+    <div class="bulk-summary-card">
+      <span>📦</span>
+      <div>
+        <h3>3</h3>
+        <p>Produk Tersedia</p>
+      </div>
+    </div>
+
+    <div class="bulk-summary-card">
+      <span>🤝</span>
+      <div>
+        <h3>12</h3>
+        <p>UMKM Bergabung</p>
+      </div>
+    </div>
+
+    <div class="bulk-summary-card">
+      <span>💚</span>
+      <div>
+        <h3>15%</h3>
+        <p>Potensi Hemat</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bulk-section-heading">
+    <div>
+      <h2>Produk Kulakan</h2>
+      <p>Pilih bahan baku yang dibutuhkan usahamu.</p>
+    </div>
+    <span class="available-label">● Tersedia</span>
+  </div>
+
+  <div class="bulk-products">
+    <div class="bulk-product-card">
+      <div class="bulk-product-icon">🍚</div>
+      <div class="bulk-product-info">
+        <span class="product-category">BAHAN POKOK</span>
+        <h3>Beras Premium</h3>
+        <p>Stok tersedia: 100 kg</p>
+        <div class="bulk-price">
+          <strong>Rp13.000</strong>
+          <del>Rp15.000</del>
+          <span>/ kg</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bulk-product-card">
+      <div class="bulk-product-icon">🛢️</div>
+      <div class="bulk-product-info">
+        <span class="product-category">BAHAN POKOK</span>
+        <h3>Minyak Goreng</h3>
+        <p>Stok tersedia: 80 liter</p>
+        <div class="bulk-price">
+          <strong>Rp16.000</strong>
+          <del>Rp18.000</del>
+          <span>/ liter</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bulk-product-card">
+      <div class="bulk-product-icon">🥚</div>
+      <div class="bulk-product-info">
+        <span class="product-category">BAHAN POKOK</span>
+        <h3>Telur Ayam</h3>
+        <p>Stok tersedia: 50 kg</p>
+        <div class="bulk-price">
+          <strong>Rp26.000</strong>
+          <del>Rp29.000</del>
+          <span>/ kg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bulk-calculator">
+    <div class="bulk-calculator-heading">
+      <span>🧮</span>
+      <div>
+        <h2>Hitung Belanja</h2>
+        <p>Perkirakan total biaya kulakanmu.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="kg">Jumlah pembelian (kg)</label>
+      <input
+        type="number"
+        id="kg"
+        min="1"
+        placeholder="Masukkan jumlah kg"
+        oninput="updateBulkTotal()"
+      />
+    </div>
+
+    <div class="bulk-total-box">
+      <p>Estimasi Total Kulakan</p>
+      <h2 id="bulkTotal">Rp0</h2>
+      <span>*Simulasi menggunakan harga beras premium.</span>
+    </div>
+
+    <button class="bulk-button" onclick="joinBulk()">
+      Ikut Kulakan Sekarang →
+    </button>
+  </div>
+</section>
+
+  <!-- NAVIGASI BAWAH HP -->
+  <nav class="mobile-nav">
+    <button onclick="showPage('home')"><span>⌂</span>Beranda</button>
+    <button onclick="showPage('cashier')"><span>▣</span>Kasir</button>
+    <button onclick="showPage('save')"><span>♡</span>Bahan</button>
+    <button onclick="showPage('energy')"><span>☀</span>Energi</button>
+    <button onclick="showPage('bulk')"><span>♧</span>Kulakan</button>
+  </nav>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
